@@ -8,30 +8,27 @@
       font-family: "Comic Sans MS", cursive;
       margin: 0;
       padding: 20px;
+      text-align: center;
     }
 
     .container {
       display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap; /* makes it mobile-friendly */
       gap: 20px;
-      margin-top: 60px;
-      text-align: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
     }
 
     img {
       width: 200px;
+      max-width: 80vw;
       border-radius: 20px;
     }
 
     h1 {
-      font-size: 2.2em;
-    }
-
-    .buttons {
-      text-align: center;
-      margin-top: 30px;
+      font-size: 2em;
     }
 
     button {
@@ -51,11 +48,10 @@
     #no {
       background: gray;
       color: white;
-      position: absolute;
     }
 
     #system {
-      text-align: center;
+      margin-top: 20px;
       font-size: 18px;
     }
   </style>
