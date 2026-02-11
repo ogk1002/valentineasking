@@ -125,20 +125,24 @@ function yes() {
     "16.jpg",
     "3.jpg"
   ];
-
-  // shuffle once
+  
   images.sort(() => Math.random() - 0.5);
 
-  let count = 0;
+  let index = 0;
 
-  let interval = setInterval(() => {
-    if (count >= images.length) {
-      clearInterval(interval);
-      return;
+  setInterval(() => {
+    let src;
+
+    if (index < images.length) {
+      // guaranteed first round
+      src = images[index];
+      index++;
+    } else {
+      src = images[Math.floor(Math.random() * images.length)];
     }
 
     let img = document.createElement("img");
-    img.src = images[count];   // <- not random anymore
+    img.src = src;
     img.className = "floating";
 
     let x, y;
@@ -152,9 +156,9 @@ function yes() {
     img.style.transform = "rotate(" + (Math.random()*20 - 10) + "deg)";
 
     document.body.appendChild(img);
-    count++;
-  }, 500);
+  }, 500); 
 }
+
 </script>
 
 </body>
